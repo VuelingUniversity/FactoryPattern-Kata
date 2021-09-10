@@ -2,6 +2,11 @@
 {
 	public class LicenseManager
 	{
+		public interface IChecker
+		{
+			bool Check(ActivationData activation_data, License license_data);
+		}
+
 		public static bool CheckActivation(ActivationData activationData, License license)
 		{
 			//change the solution so the following code will work instead of the uncommented one , lines 12-30, that should be gone )
