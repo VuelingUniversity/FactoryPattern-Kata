@@ -1,13 +1,14 @@
-﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
-using Xunit;
 
-namespace FactoryPattern_Kata
+namespace FactoryPattern_Kata.Test
 {
-    public class SampleTests
+    [TestClass]
+    public class CheckerTest
     {
         private List<string> hardwareIdList = new List<string>() { "4D:DD:4E:44:B3:D3", "58:D9:A5:D5:5A:6F", "CD:7B:A6:CC:D7:54" };
-
+        [TestMethod]
         public void Check_activation_returns_true_with_no_hardware_check_and_not_expired()
         {
             var licenseData = new License(
@@ -19,8 +20,9 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Assert.True(result);
+            Assert.IsTrue(result);
         }
+        [TestMethod]
         public void Check_activation_returns_false_with_no_hardware_check_and_expired()
         {
             var licenseData = new License(
@@ -32,9 +34,9 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Assert.False(result);
+            Assert.IsFalse(result);
         }
-
+        [TestMethod]
         public void Check_activation_returns_true_with_hardware_check()
         {
             var licenseData = new License(
@@ -46,10 +48,9 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Assert.True(result);
+            Assert.IsTrue(result);
         }
-
-
+        [TestMethod]
         public void Check_activation_returns_false_with_hardware_check_and_expired()
         {
             var licenseData = new License(
@@ -61,9 +62,9 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Assert.False(result);
+            Assert.IsFalse(result);
         }
-
+        [TestMethod]
         public void Check_activation_returns_false_with_hardware_check_and_maximum_activations_reached()
         {
             var licenseData = new License(
@@ -75,9 +76,9 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Assert.False(result);
+            Assert.IsFalse(result);
         }
-
+        [TestMethod]
         public void Check_activation_returns_true_with_hardware_check_and_maximum_activations_reached_but_already_active()
         {
             var licenseData = new License(
@@ -89,8 +90,8 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Assert.True(result);
+            Assert.IsTrue(result);
         }
-
+        
     }
 }
