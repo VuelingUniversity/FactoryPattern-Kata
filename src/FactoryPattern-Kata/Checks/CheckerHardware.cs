@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using FactoryPattern_Kata.Core;
+using FactoryPattern_Kata.Interfaces;
+using System.Linq;
 
 namespace FactoryPattern_Kata
 {
@@ -6,15 +8,12 @@ namespace FactoryPattern_Kata
 	{
 		public bool Check(ActivationData activationData, License licenseData)
         {
-            if (licenseData.Activations.Count == licenseData.LimitOfActivations
-                    && !licenseData.Activations.Contains(activationData.HardwareId))
-            {
+            if (activationData.Date > licenseData.MaxActivations)
                 return false;
-            }
-            if (activationData.Date<licenseData.MaxActivations)
-            {
+            else if (licenseData.Activations.Count != licenseData.LimitOfActivations)
+                return true;
+            else if (!licenseData.Activations.Contains(activationData.HardwareId))
                 return false;
-            }
             return true;
         }
 	}

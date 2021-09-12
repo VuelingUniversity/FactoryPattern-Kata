@@ -1,12 +1,13 @@
 ﻿using System;
 
+
 namespace FactoryPattern_Kata
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			var sampleTest = new SampleTests();
+			var sampleTest = new FactoryTest();
 			sampleTest.Check_activation_returns_false_with_hardware_check_and_expired();
 			sampleTest.Check_activation_returns_false_with_hardware_check_and_maximum_activations_reached();
 			sampleTest.Check_activation_returns_false_with_no_hardware_check_and_expired();

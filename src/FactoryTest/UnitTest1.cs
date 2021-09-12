@@ -1,12 +1,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using Xunit;
+
 
 namespace FactoryPattern_Kata
 {
     [TestClass]
-    public class SampleTests
+    public class FactoryPatter_Kata_Test
     {
         private List<string> hardwareIdList = new List<string>() { "4D:DD:4E:44:B3:D3", "58:D9:A5:D5:5A:6F", "CD:7B:A6:CC:D7:54" };
         [TestMethod]
@@ -21,7 +21,7 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Xunit.Assert.True(result);
+            Assert.IsTrue(result);
         }
         [TestMethod]
         public void Check_activation_returns_false_with_no_hardware_check_and_expired()
@@ -35,7 +35,7 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Xunit.Assert.False(result);
+            Assert.IsFalse(result);
         }
         [TestMethod]
         public void Check_activation_returns_true_with_hardware_check()
@@ -49,7 +49,7 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Xunit.Assert.True(result);
+            Assert.IsTrue(result);
         }
         [TestMethod]
         public void Check_activation_returns_false_with_hardware_check_and_expired()
@@ -63,7 +63,7 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Xunit.Assert.False(result);
+            Assert.IsFalse(result);
         }
         [TestMethod]
         public void Check_activation_returns_false_with_hardware_check_and_maximum_activations_reached()
@@ -77,7 +77,7 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Xunit.Assert.False(result);
+            Assert.IsFalse(result);
         }
         [TestMethod]
         public void Check_activation_returns_true_with_hardware_check_and_maximum_activations_reached_but_already_active()
@@ -91,7 +91,7 @@ namespace FactoryPattern_Kata
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
 
-            Xunit.Assert.True(result);
+            Assert.IsTrue(result);
         }
 
     }

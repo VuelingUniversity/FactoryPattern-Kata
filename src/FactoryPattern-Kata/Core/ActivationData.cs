@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FactoryPattern_Kata
+namespace FactoryPattern_Kata.Core
 {
 	public class ActivationData
 	{

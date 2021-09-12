@@ -1,4 +1,4 @@
-﻿namespace FactoryPattern_Kata
+﻿namespace FactoryPattern_Kata.Core
 {
 	public enum LicenseType
 	{

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FactoryPattern_Kata.Checks;
+using FactoryPattern_Kata.Core;
+using FactoryPattern_Kata.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace FactoryPattern_Kata

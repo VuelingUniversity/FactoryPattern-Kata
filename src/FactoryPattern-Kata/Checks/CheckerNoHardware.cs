@@ -1,4 +1,7 @@
-﻿namespace FactoryPattern_Kata
+﻿using FactoryPattern_Kata.Core;
+using FactoryPattern_Kata.Interfaces;
+
+namespace FactoryPattern_Kata.Checks
 {
 	public class CheckerNoHardware : IChecker
 	{

@@ -1,4 +1,6 @@
-﻿namespace FactoryPattern_Kata
+﻿using FactoryPattern_Kata.Core;
+
+namespace FactoryPattern_Kata.Interfaces
 {
 	public interface IChecker
 	{
