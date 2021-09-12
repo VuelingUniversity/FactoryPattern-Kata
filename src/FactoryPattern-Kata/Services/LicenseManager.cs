@@ -11,7 +11,7 @@
 			 */
 			if (license.LicenseType == LicenseType.NoCheck)
 			{
-				if (activationData.Date > license.MaxActivations)
+				if (license.LicenseType == LicenseType.NoCheck && activationData.Date > license.MaxActivations)
 				{
 					return false;
 				}
