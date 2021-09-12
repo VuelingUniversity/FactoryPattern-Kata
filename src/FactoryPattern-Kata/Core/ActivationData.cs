@@ -6,7 +6,6 @@ namespace FactoryPattern_Kata
 	{
 		public DateTime Date;
 		public string HardwareId;
-
 		public ActivationData(DateTime date, string hardwareId)
 		{
 			Date = date;
