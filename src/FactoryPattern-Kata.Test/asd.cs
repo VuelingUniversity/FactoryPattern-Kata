@@ -57,7 +57,6 @@ namespace FactoryPattern_Kata
                     new DateTime(2019, 4, 30),
                     10,
                     hardwareIdList);
-
             var activationData = new ActivationData(new DateTime(2019, 5, 24), "71:32:82:AE:2C:C6");
 
             var result = LicenseManager.CheckActivation(activationData, licenseData);
